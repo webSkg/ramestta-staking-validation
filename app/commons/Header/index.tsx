@@ -1,6 +1,17 @@
+"use client";
+import styled from "@emotion/styled";
 import { Box, Button, Typography } from "@mui/material";
-import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import Link from "next/link";
+
+const GradientButton = styled(Button)`
+  background: linear-gradient(280deg, #38c682 30%, #00796d 100%);
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  height: 48px;
+  padding: 0 30px;
+`;
+
 const index = () => {
   return (
     <Box
@@ -9,7 +20,6 @@ const index = () => {
         justifyContent: "space-between",
         textAlign: "center",
       }}
-      bgcolor={"red"}
       padding={2}
     >
       <Link
@@ -43,29 +53,19 @@ const index = () => {
             strokeDasharray="15 3"
           />
         </svg>
-
-        <Typography sx={{ minWidth: 100 }} fontSize={30} fontWeight={500}>
-          Ramestta Faucet
-        </Typography>
       </Link>
-      <Box sx={{ display: "flex", alignItems: "center" }} gap={2}>
-        <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-          <Typography sx={{ minWidth: 100 }}>Other Faucets</Typography>
+      <Box sx={{ display: "flex", alignItems: "center" }} gap={4}>
+        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
+          <Typography sx={{ minWidth: 100 }}>All Validators </Typography>
         </Link>
-        <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-          <Typography sx={{ minWidth: 100 }}>Build on Ramestta</Typography>
+        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
+          <Typography sx={{ minWidth: 100 }}>Basic Reports</Typography>
         </Link>
-        <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-          <Typography sx={{ minWidth: 100 }}>Report issue</Typography>
+        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
+          <Typography sx={{ minWidth: 100 }}>Rewards Calculator</Typography>
         </Link>{" "}
-        <Link
-          href="/"
-          style={{
-            textDecoration: "none",
-            color: "white",
-          }}
-        ></Link>
       </Box>
+      <GradientButton variant="contained">Login</GradientButton>
     </Box>
   );
 };
