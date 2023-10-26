@@ -1,6 +1,6 @@
-import { Box, Typography } from "@mui/material";
-import StakingButton from "../../commons/StakingButton";
-
+import { Box, Typography } from "@mui/material"
+import StakingButton from "../../commons/StakingButton"
+import Overview from "../Overview"
 const index = () => {
   return (
     <>
@@ -8,11 +8,11 @@ const index = () => {
         <Box
           width={"50%"}
           marginY={"auto"}
-          marginLeft={"60px"}
+          paddingLeft={"60px"}
           sx={{
             backgroundImage: 'url("/assets/Circle.png")',
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "left bottom",
+            backgroundPosition: "left center",
           }}
         >
           <Typography
@@ -35,8 +35,11 @@ const index = () => {
           }}
         />
       </Box>
+      <Box position={"relative"} top={-80} padding={4}>
+        <Overview />
+      </Box>
     </>
-  );
-};
+  )
+}
 
-export default index;
+export default index

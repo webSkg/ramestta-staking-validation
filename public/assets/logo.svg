@@ -1,29 +1,4 @@
-import { Box, Typography } from "@mui/material"
-import Link from "next/link"
-import StakingButton from "../StakingButton"
-
-const index = () => {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        textAlign: "center",
-      }}
-      padding={2}
-    >
-      <Link
-        href="/"
-        style={{
-          textDecoration: "none",
-          color: "black",
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-        }}
-      >
-        {/* <AllInclusiveIcon /> */}
-        <svg
+<svg
           width="176"
           height="59"
           viewBox="0 0 176 59"
@@ -43,20 +18,3 @@ const index = () => {
             strokeDasharray="15 3"
           />
         </svg>
-      </Link>
-      <Box sx={{ display: "flex", alignItems: "center" }} gap={4}>
-        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
-          <Typography sx={{ minWidth: 100 }}>All Validators </Typography>
-        </Link>
-        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
-          <Typography sx={{ minWidth: 100 }}>Basic Reports</Typography>
-        </Link>
-        <Link href="/" style={{ textDecoration: "none", color: "gray" }}>
-          <Typography sx={{ minWidth: 100 }}>Rewards Calculator</Typography>
-        </Link>{" "}
-      </Box>
-      <StakingButton text={"Login"} />
-    </Box>
-  )
-}
-export default index
