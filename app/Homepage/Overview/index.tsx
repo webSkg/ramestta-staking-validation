@@ -48,7 +48,6 @@ const Content = [
 const index = () => {
   return (
     <Box
-      minHeight={"400px"}
       bgcolor={"white"}
       display={"flex"}
       flexDirection={"column"}
@@ -60,24 +59,27 @@ const index = () => {
       overflow={"clip"}
     >
       <Typography width={"100%"} borderBottom={1} borderColor={"#E8E8E8"} p={2}>
-        OverView
+        Overview
       </Typography>
-      <Grid container height={401}>
-        {Content.map((lime) => (
-          <Grid sm={3} xs={6}>
+      <Grid container>
+        {Content.map((lime, index) => (
+          <Grid key={index} sm={3} xs={6}>
             <Box
-              height={201}
-              p={4}
+              height={200}
+              px={4}
+              pt={6}
               borderBottom={1}
               borderRight={1}
               borderColor={"#E8E8E8"}
             >
-              <Typography fontSize={14}>{lime.head}</Typography>
-              <Typography fontWeight={700} fontSize={20}>
+              <Typography fontSize={14} color={"#B7B3B3"}>
+                {lime.head}
+              </Typography>
+              <Typography fontWeight={800} fontSize={24}>
                 {lime.subHead}
               </Typography>
               {lime.superSubHead && (
-                <Typography color={lime.isTime && "lime"}>
+                <Typography color={lime.isTime ? "lime" : "#B7B3B3"}>
                   {lime.superSubHead}
                 </Typography>
               )}
