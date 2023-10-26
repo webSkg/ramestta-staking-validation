@@ -1,16 +1,6 @@
-"use client";
-import styled from "@emotion/styled";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-
-const GradientButton = styled(Button)`
-  background: linear-gradient(280deg, #38c682 30%, #00796d 100%);
-  border-radius: 8px;
-  border: 0;
-  color: white;
-  height: 48px;
-  padding: 0 30px;
-`;
+import StakingButton from "../StakingButton";
 
 const index = () => {
   return (
@@ -65,7 +55,7 @@ const index = () => {
           <Typography sx={{ minWidth: 100 }}>Rewards Calculator</Typography>
         </Link>{" "}
       </Box>
-      <GradientButton variant="contained">Login</GradientButton>
+      <StakingButton text={"Login"} />
     </Box>
   );
 };
