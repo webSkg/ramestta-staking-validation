@@ -1,8 +1,8 @@
-"use client"
-import { Box, InputBase, Typography, alpha, styled } from "@mui/material"
-import SearchIcon from "@mui/icons-material/Search"
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material"
-import { useState } from "react"
+"use client";
+import { Box, InputBase, Typography, alpha, styled } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -19,7 +19,7 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: "fit-content",
   },
-}))
+}));
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
@@ -28,7 +28,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-}))
+}));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   marginTop: 8,
@@ -42,14 +42,28 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: "20ch",
     },
   },
-}))
+}));
 
-const SortOptions = [{ name: "Performance" }, { name: "Latest" }]
-const AllValidators = [{ profile: "/assets/profile.png", name: "rama 1" }]
+const SortOptions = [{ name: "Performance" }, { name: "Latest" }];
+const AllValidators = [
+  {
+    profile: "/assets/profile.png",
+    name: "RamaGo 1",
+    stakedAmount: "998000.0",
+    OwnerRAMABalance: 600,
+    TotalStake: "3,765,449.29",
+    "Validator'sStake": "36,310.02",
+    HeimdallFee: 10,
+    TotalRewardEarned: 40,
+    HealthStatus: "Healthy",
+    DelegatedAmount: "1362.0",
+    DelegatorsReward: "0.00",
+  },
+];
 
 const index = () => {
-  const [searchText, setSearchText] = useState("")
-  const [sortBy, setSortBy] = useState("")
+  const [searchText, setSearchText] = useState("");
+  const [sortBy, setSortBy] = useState("");
   return (
     <>
       <Typography pl={4} mb={2} fontSize={20} fontWeight={800}>
@@ -86,6 +100,6 @@ const index = () => {
         </Box>
       </Box>
     </>
-  )
-}
-export default index
+  );
+};
+export default index;
