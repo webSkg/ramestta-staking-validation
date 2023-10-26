@@ -1,8 +1,8 @@
-"use client"
-import { Box, InputBase, Typography, alpha, styled } from "@mui/material"
-import SearchIcon from "@mui/icons-material/Search"
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material"
-import { useState } from "react"
+"use client";
+import { Box, InputBase, Typography, alpha, styled } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -19,7 +19,7 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: "fit-content",
   },
-}))
+}));
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
@@ -28,7 +28,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-}))
+}));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   marginTop: 8,
@@ -42,9 +42,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: "20ch",
     },
   },
-}))
+}));
 
-const SortOptions = [{ name: "Performance" }, { name: "Latest" }]
+const SortOptions = [{ name: "Performance" }, { name: "Latest" }];
+
 const AllValidators = [
   {
     profile: "/assets/profile.png",
@@ -136,11 +137,11 @@ const AllValidators = [
     delegatedAmount: "1362.0",
     delegatorsReward: "0.00",
   },
-]
+];
 
 const index = () => {
-  const [searchText, setSearchText] = useState("")
-  const [sortBy, setSortBy] = useState("")
+  const [searchText, setSearchText] = useState("");
+  const [sortBy, setSortBy] = useState("");
   return (
     <>
       <Typography pl={4} mb={2} fontSize={20} fontWeight={800}>
@@ -183,13 +184,30 @@ const index = () => {
         justifyContent={"center"}
         flexWrap={"wrap"}
       >
-        {AllValidators.map((vaidator) => (
+        {AllValidators.map((validator) => (
           <Box bgcolor={"red"} width={"30%"}>
-            {vaidator.delegatedAmount}
+            <img src={validator.profile} alt="" />
+            <Typography>{validator.name}</Typography>
+            <Typography>{validator.stakedAmount}</Typography>
+            <Typography>{validator.ramaBalance}</Typography>
+            <Typography>{validator.ramaBalanceDollar}</Typography>
+            <Typography>{validator.totalStake}</Typography>
+            <Typography>{validator.totalStakeDollar}</Typography>
+            <Typography>{validator.validatorsStake}</Typography>
+            <Typography>{validator.validatorsStakeDollar}</Typography>
+            <Typography>{validator.heimdallFee}</Typography>
+            <Typography>{validator.heimdallFeeDollar}</Typography>
+            <Typography>{validator.totalRewardEarned}</Typography>
+            <Typography>{validator.totalRewardEarnedDollar}</Typography>
+            <Typography>{validator.healthStatus}</Typography>
+            <Typography>{validator.delegatedAmount}</Typography>
+            <Typography>{validator.delegatorsReward}</Typography>
+
+            {validator.delegatedAmount}
           </Box>
         ))}
       </Box>
     </>
-  )
-}
-export default index
+  );
+};
+export default index;
