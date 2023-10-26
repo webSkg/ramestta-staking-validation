@@ -79,7 +79,10 @@ const index = () => {
                 {lime.subHead}
               </Typography>
               {lime.superSubHead && (
-                <Typography color={lime.isTime ? "lime" : "#B7B3B3"}>
+                <Typography
+                  fontWeight={lime.isTime ? 700 : 500}
+                  color={lime.isTime ? "#50C526" : "#B7B3B3"}
+                >
                   {lime.superSubHead}
                 </Typography>
               )}

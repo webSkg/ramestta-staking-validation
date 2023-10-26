@@ -1,5 +1,5 @@
 "use client"
-import { Box, InputBase, alpha, styled } from "@mui/material"
+import { Box, InputBase, Typography, alpha, styled } from "@mui/material"
 import SearchIcon from "@mui/icons-material/Search"
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material"
 import { useState } from "react"
@@ -45,12 +45,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 const SortOptions = [{ name: "Performance" }, { name: "Latest" }]
+const AllValidators = [{ profile: "/assets/profile.png", name: "rama 1" }]
 
 const index = () => {
   const [searchText, setSearchText] = useState("")
   const [sortBy, setSortBy] = useState("")
   return (
     <>
+      <Typography pl={4} mb={2} fontSize={20} fontWeight={800}>
+        All Validators
+      </Typography>
       <Box display={"flex"} justifyContent={"space-between"}>
         <Search>
           <SearchIconWrapper>
